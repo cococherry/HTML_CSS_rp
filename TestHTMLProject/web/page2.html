@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">-->
+<!-- 각 html의 버전을 의미, 그냥 html은 html5를 의미한다. -->
+<html lang="ko">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>목록 연습</title>
+  </head>
+  <body bgcolor="BLACK" text="WHITE" link="white" vlink="gray">
+    <a href="#position_1">정의부분으로 가기</a>
+    <a href="index.html">첫 페이지로 돌아가기</a>
+    <h2>목록 만들기 연습</h2>
+    <h3>ul(unorder list), ol(order list), dl(definition list)</h3>
+    <h4>ul : 순서 없는 목록, 항목 앞에 블릿기호가 표시됨</h4>
+    <ul type="disk"> <!-- circle, disk(default), square -->
+      <li><a href="page1.html">java</a></li>
+      <li><a href="https://www.oracle.com/index.html" target="_blank">oracle</a></li>
+      <li>jdbc</li>
+      <li>html5</li>
+    </ul><br><br><br><br><br><br>
+    <h4>ol : 순번이 매겨지는 목록</h4>
+    <ol type="I"> <!-- 1, A, a, I, i -->
+      <li>html5</li>
+      <li>css3</li>
+      <li>javascript</li>
+      <li>jquery</li>
+      <li>web api</li>
+    </ol><br><br><br><br><br>
+    <a href="page2.html" target="_top">맨 위로 가기</a><br><br>
+    <h4>dl : 제목과 순번을 하나로 묶어 목록을 만듦</h4>
+    <dl type="I"> <!-- 1, A, a, I, i -->
+      <a name="position_1">정의부분</a>
+      <dt>html5</dt>
+      <dd>W3C에서 발표한 웹 표준 2.0의 기술을 제공하는 새로운 웹페이지 제작용 마크업 언어이다.</dd>
+      <dt>css3</dt>
+      <dd>html5와 함께 웹 표준 2.0의 웹페이지의 스타일을 적용하기 위한 스타일시트 새 버전이다.</dd>
+      <dt>javascript</dt>
+      <dd>자바로 만든 웹페이지에 사용되는 스크립트 언어이다.</dd>
+      <dt>jquery</dt>
+      <dd>jquery 사에서 자바스크립트 소스를 작성해서 제공한 오픈 소스들을 말한다.</dd>
+    </dl><br><br>
+    <!-- <a> 태그
+    ? _SELF : 링크된 새로운 문서를 현재의 프레임에 보여 준다.
+	? _PARENT : 현재 프레임의 상위 프레임을 보여 준다.
+	? _TOP : 화면의 모든 프레임을 지우고 화면 전체에 보여 준다.
+	? _BLANK : 현재 창을 그대로 두고, 새로운 창을 열어 보여 준다.
+     -->
+  </body>
+</html>

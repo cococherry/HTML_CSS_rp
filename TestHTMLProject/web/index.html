@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!-- 각 html의 버전을 의미, 그냥 html은 html5를 의미한다. -->
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>test Form tag</title>
+  </head>
+  <body>
+  	<h1>testHTMLProject</h1>
+  	  <form method="post" action="">
+  	  	ID 입력 : <input type="text" name="userid" size="16" maxlength="15" value="admin" readonly><br><br>
+  	  	비밀번호 : <input type="password" name="userpwd" size="16" maxlength="15"><br><br>
+  	  	<input type="submit" name="submit" value="로그인하기">
+  	  </form>
+  	  <hr>
+  	  <div>
+  	      <form method="post" action="">
+  	      검색 : <input type="search" name="keyword" value="키워드를 입력하세요.">
+  	      <br><br><input type="submit" value="검색하기">
+  	      </form>
+  	      <br><br>
+  	      <h2>회원가입 창 만들기</h2>
+  	      <form method="post" action="회원가입값받을클래스명">
+  	      <table border="1" bordercolor="white" width="500" align="center">
+  	        <tr>
+  	          <td bgcolor="#b3d9ff">ID </td>
+  	          <td><input type="text" name="id" size="16">
+  	          &nbsp;&nbsp;&nbsp;<input type="button" value="중복확인" onclick="">
+  	          <!-- Ajax 이용하여 페이지 이동없이 직접 처리 가능 --></td>
+  	        </tr>
+  	        <tr>
+  	          <td bgcolor="#b3d9ff">비밀번호 </td>
+  	          <td><input type="password" name="pwd" size="16"></td>
+  	        </tr>
+  	        <tr>
+  	          <td bgcolor="#b3d9ff">비밀번호 확인 </td>
+  	          <td><input type="password" name="pwd2" size="16"></td>
+  	        </tr>
+  	        <tr>
+  	          <td bgcolor="#b3d9ff">이름 </td>
+  	          <td><input type="text" name="name" size="16"></td>
+  	        </tr>
+  	        <tr>
+  	          <td bgcolor="#b3d9ff">이메일 </td>
+  	          <td>
+  	          <input type="email" name="email" autocomplete="on">
+  	          <!-- <input type="text" name="email" size="7">@
+  	          <select name="maildomain">
+  	          <option value="naver.com" selected>naver.com
+  	          <option value="daum.net">daum.net
+  	          <option value="gmail.com">gmail.com
+  	          <option value="nate.com">nate.com
+  	          <option value="paran.com">paran.com
+  	          <option value="hotmail.net">hotmail.net -->
+  	          </select></td>
+  	        </tr>
+  	        <tr>
+  	          <td bgcolor="#b3d9ff">전화번호 </td>
+  	          <td><input type="tel" name="tel" size="16">
+  	          </td>
+  	        </tr>
+  	        <tr>
+  	          <td bgcolor="#b3d9ff">직업</td>
+  	          <td><select name="job">
+  	          <option value="회사원" selected>회사원
+  	          <option value="학생">학생
+  	          <option value="자영업">자영업
+  	          <option value="주부">주부
+  	          <option value="군인">군인
+  	          <option value="기타">기타
+  	          </select></td>
+  	        </tr>
+  	        <tr>
+  	          <td bgcolor="#b3d9ff">성별 </td>
+  	          <td><input type="radio" name="gender" value="M">남성&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" value="F">여성</td>
+  	        </tr>
+  	        <tr>
+  	          <td bgcolor="#b3d9ff">취미 </td>
+  	          <td>
+  	            <table>
+  	              <tr>
+  	                 <td><input type="checkbox" name="hobby" value="clime">등산</td>
+  	              </tr>
+  	              <tr>
+  	                 <td><input type="checkbox" name="hobby" value="movie">영화 감상</td>
+  	              </tr>
+  	              <tr>
+  	                 <td><input type="checkbox" name="hobby" value="music">음악 감상</td>
+  	              </tr>
+  	              <tr>
+  	                 <td><input type="checkbox" name="hobby" value="dance">댄스</td>
+  	              </tr>
+  	              <tr>
+  	                 <td><input type="checkbox" name="hobby" value="read">독서</td>
+  	              </tr>
+  	            </table>
+  	          </td>
+  	        </tr>
+  	        <tr>
+  	          <td bgcolor="#b3d9ff">SNS 연동</td>
+  	          <td>
+  	            <input type="image" src="images/me2day.jpg" onclick="alert('메이데이 버튼을 누르셨군요!!');"> &nbsp;
+  	            <input type="image" src="images/cyworld.jpg" onclick="alert('싸이월드 버튼을 누르셨군요!!');"> &nbsp;
+  	            <input type="image" src="images/facebook.jpg" onclick="alert('페이스북 버튼을 누르셨군요!!');"> &nbsp;
+  	            <input type="image" src="images/twitter.jpg" onclick="alert('트위터 버튼을 누르셨군요!!');">
+  	          </td>
+  	        </tr>
+  	        <tr>
+  	         <td bgcolor="#b3d9ff">하고 싶은 말</td>
+  	         <td><TEXTAREA rows="4", cols="25" NAME="comment"></TEXTAREA></td>
+  	        </tr>
+  	        <tr>
+  	          <td colspan="2" align="center">
+  	            <input type="submit" value="가입하기"> &nbsp; &nbsp;
+  	      		<input type="reset" value="가입취소">
+  	          </td>
+  	        </tr>
+  	      </table>
+  	      </form>
+  	  </div>
+  	  <hr>
+  	  <div>
+  	  <h2>게시글 등록하기</h2>
+  	  <form method="post" action="">
+  	  <table>
+  	    <tr>
+  	       <td align="center" bgcolor="#e6fff5">글번호</td>
+  	       <td><input type="number" name="wno" min="1" max="100"
+  	       step="1" value="12">
+  	       </td>
+  	    </tr>
+  	    <tr>
+  	       <td align="center" bgcolor="#e6fff5">글제목</td>
+  	       <td><input type="text" name="wtitle" size="16">
+  	       </td>
+  	    </tr>
+  	    <tr>
+  	       <td align="center" bgcolor="#e6fff5">작성자</td>
+  	       <td><input type="text" name="writer" size="16">
+  	       </td>
+  	    </tr>
+  	    <tr>
+  	       <td align="center" bgcolor="#e6fff5">작성날짜</td>
+  	       <td><input type="date" name="wdate">
+  	       </td>
+  	    </tr>
+  	    <tr>
+  	       <td align="center" bgcolor="#e6fff5">첨부파일</td>
+  	       <td><input type="file" name="upfile">
+  	       </td>
+  	    </tr>
+  	    <tr>
+  	       <td align="center" bgcolor="#e6fff5">글내용</td>
+  	       <td><textarea rows="10" cols="50"></textarea>
+  	       </td>
+  	    </tr>
+  	    <tr>
+  	       <td colspan="2" align="center">
+  	       <input type="submit" value="등록하기"> &nbsp; &nbsp;
+  	       <input type="reset" value="등록취소">
+  	       </td>
+  	    </tr>
+  	  </table>
+  	  </form>
+  	  </div>
+  </body>
+</html>

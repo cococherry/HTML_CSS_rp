@@ -1,0 +1,97 @@
+<html lang="ko"> <!-- 웹 문서의 시작 (시작 태그 : 폐쇄형 태그) -->
+  <head> <!-- 해당 문서의 설정 정보를 표시 -->
+     <meta charset="UTF-8"> <!-- 단일 태그 : 닫기가 없음 -->
+     <title>HTML5 테스트 문서</title>
+  </head>
+  <body background="images/flower5.jpg" leftmargin="10%"> <!-- 웹 브라우저 화면에 보여지는 내용을 표시 -->
+     <header>
+        <h1>HeadLine_1</h1>
+        <h2>HeadLine_2</h2>
+        <h3>HeadLine_3</h3>
+        <h4>HeadLine_4</h4>
+        <h5>HeadLine_5</h5>
+        <h6>HeadLine_6</h6>
+     </header>
+     <nav>
+      <ul>
+          <li><a href="#area1"> area1 </a></li>
+          <li><a href="#area2"> area2 </a></li>
+          <li><a href="#area3"> area3  </a></li>
+          <li><a href="#area4"> area4  </a></li>
+          <br>
+          <br>
+          <li><a href="page2.html">다음 페이지로 가기</a></li>
+          <li><a href="page3.html">표 만들기 페이지 가기</a></li>
+      </ul>
+     </nav>
+     <section>
+     <!-- 글꼴 태그 : CSS에서 지정할 수 있어 Deprecated 됨 -->
+	   <FONT size="1" color="RED" face="consolas"><b>HTML5</b></FONT><br>
+	   <FONT size="2" color="BLUE" face="궁서체">HTML5</FONT><br>
+	   <FONT size="3" color="GREEN" face="Arial">HTML5</FONT><br><!-- 기본값 10point size -->
+	   <FONT size="4" color="#33cc33" face="Source code pro">HTML5</FONT><br><!-- 12point size -->
+	   <FONT size="5" color="#9999ff">HTML5</FONT><br>
+	   <FONT size="6" color="#ff80d5">HTML5</FONT><br>
+	   <FONT size="7" color="#999966">HTML5</FONT><br>
+	   <hr size="3" noshade width="50%" align="left" color="gray"/>
+	   <br>
+	   <p align="center" style="background:yellow">
+	   HTML5에서 제공하는 웹표준 2.0 의 기술을 배워봅시다.<br>
+ 	   안녕하세요. &nbsp;&nbsp;&nbsp; 공백태그 확인입니다.</p>
+ 	   <p style="background:cyan">이것은 P태그입니다.</p>
+     <p style="background:pink">이것은 P태그입니다.</p>
+     <pre> <!-- 안에 쓰여진 글을 그대로 표시해 줌 -->
+     asdsadgfasf
+            safdafasdf
+              asfdasdfasdf
+    asdfasdfaf
+     </pre>
+     </section>
+     <article>
+     <div id="area1" class="">
+     1번 구역입니다.
+     hey 거기 거기 미스터
+     <BR><BR>
+     여길 좀 바라봐 미스터
+     <BR><BR>
+     이름이 뭐야 미스터
+     <BR><BR>
+     (la la la la la la)
+     </div>
+     <div id="area2" class="">
+     2번 구역입니다.<br>
+     <FONT SIZE="5" COLOR="red">[HUG] 노래 동방신기</FONT>
+     <BR><BR>
+     <FONT SIZE="2" COLOR="red">작사 박창현 작곡 박창현</FONT>
+     <PRE>하루만 니방에 침대가 되고 싶어
+     
+     더 따스히 포근한 내품에 감싸안고 재우고 싶어
+     
+     아주 작은 뒤척임도 너의 조그만 속삭임에
+     
+     난 꿈속에 괴물도 이겨내 버릴 텐데</PRE>
+     <PRE> ..중략..</PRE>
+     </div>
+     
+     <div id="area3" class="">
+     3번 구역입니다.
+     <br/><br/><br/><br/><br/>
+     <br/><br/><br/><br/><br/>
+     <br/><br/><br/><br/><br/>
+     <br/><br/><br/><br/><br/>
+     </div>
+     
+     <div id="area4" class="">
+     4번 구역입니다.
+     <br/><br/><br/><br/><br/>
+     <br/><br/><br/><br/><br/>
+     <br/><br/><br/><br/><br/>
+     <br/><br/><br/><br/><br/>
+     </div>
+     </article>
+	<!-- 
+		한 칸 : &nbsp; (<,> 없음)
+		한 줄 : <br>
+	 -->
+  </body>
+</html> <!-- 웹 문서의 끝 (끝 태그) -->
