@@ -1,0 +1,55 @@
+@CHARSET "UTF-8";
+
+section {
+	/*border : #66ff99 dashed 10px;*/
+	background : #e6ffee;
+}
+
+header h1{
+	/*header 안에 있는 h2에만 적용하겠다!*/
+	color: navy;
+}
+
+header ul {
+	list-style: none;
+}
+header, div, h1, ul{
+	/*여러 태그에 원하는 내용을 적용하겠다!!*/
+	margin : 0px;
+}
+
+header ul li a{
+	text-decoration: none;
+	width: 120px;
+	height: 35px;
+	background: black;
+	color: white; 
+	display: block; /*해당 영역을 생성하여 처리*/
+	text-align: center;
+	padding-top: 13%;
+	font-family: 돋움체;
+	font-weight: Bold;
+	text-shadow: 1px 1px 2px lime;
+	border-radius: 5px;
+}
+
+header ul li{
+	width: 120px;
+	height: 35px;
+	float: left;
+	/*background: black;*/
+}
+
+div#area1 {
+	clear:left;
+}
+
+* {
+	/*모든 태그에 적용하겠다!*/
+	background : #66ff99;
+	padding : 0px;
+}
+
+div.area1 {
+	font-size : 2em; /*em 은 현재 사이즈의 2배*/
+}

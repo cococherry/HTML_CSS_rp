@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>멀티 미디어 파일 테스트</title>
+</head>
+<body>
+<video width="300" height="200" controls>
+동영상 확인
+ <source src="multi/video1.mp4" type="video/mp4">
+ <source src="multi/video1.ogv" type="video/ogv"><!-- 이 중에 하나 틀어라!! -->
+ <source src="multi/video1.webm" type="video/webm">
+<!-- 
+코덱에 따라 달라지는 동영상 파일은 <source> 태그를 사용해서 연결합니다.
+<video width="480" height="320" autoplay controls poster="without.jpg">
+<!- ogv는 예전 파이어폭스와 오페라
+<source src="without.ogv" type="video/ogv">
+<!- mp4는 사파리, IE9, 아이폰, 아이패드, 안드로이드, 윈도우 7 폰 
+<source src="without.mp4" type="video/mp4">
+<!- WebM는 파이어폭스4, 오페라, 크롬 
+<source src="without.webm" type="video/webm">
+</video>
+ -->
+</video>
+<br><br>
+<audio src="multi/major.mp3" controls>음악 파일 1</audio><br>
+<audio controls>음악 파일 2
+<source src="multi/Sleep Away.mp3" type="audio/mp3">
+<source src="multi/Sleep Away.ogg" type="audio/ogg">
+</audio>
+</body>
+</html>

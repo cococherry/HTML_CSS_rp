@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>시멘틱 태그 연습</title>
+<!-- 
+왜 사용할까?
+• 검색 엔진에서 쉽게 웹 문서 내용을 검색할 수 있다.
+• 화면 판독기 같은 웹 보조 기구에서 웹 문서를 정확하게 알 수 있다.
+ - 화면 접근성(확대기능, 음성지원기능)을 지원하느냐 
+• 어떤 장치에서나 똑같이 문서를 해석할 수 있다 → 웹 문서의 표준 시작
+ - 어떤 장치건 모두 동일한 태그를 사용해야, 분석하기가 용이하기 때문
+ -->
+ <style>
+	mark{background-color:#b3ffcc;font-weight:bold;padding:3px}
+ </style>
+</head>
+<body>
+<header>
+<h1> walking in the air</h1>
+</header>
+<nav>
+<!-- 각 메뉴로 넘어가기 위해 링크를 걸어 줌 -->
+<ul>
+<li><img src="images/top1.png" width="20" height="20"><a href="">올렛길이란</a></li>
+<li> &nbsp; <a href="">올렛길의 유래</a></li>
+<li> &nbsp; <a href="">안내 체계 및 표지</a></li>
+<li> &nbsp; <a href="">주의 사항</a></li>
+</ul>
+</nav>
+<hr>
+<aside></aside>
+<section>
+<article>
+<h2><img src="images/top1.png" width="20" height="20"><mark>올레길이란</mark></h2>
+<pre>
+제주의 바람을 느끼고 돌담을 끼고 돌며
+바다를 보고 하늘을 보며
+제주의 흙과 돌을 쌓고 천천히 걷고자 만들어졌다.
+</pre>
+<figure>
+<img src="images/올레길1.jpg" width="32%" height="130" alt="올레길 사진1">
+<img src="images/올레길2.jpg" width="32%" height="130" alt="올레길 사진2">
+<img src="images/올레길3.jpg" width="32%" height="130" alt="올레길 사진3">
+<figcaption>
+<b>올레길 사진</b> - 등산이 가능한 올레길 1번 코스의 사진과 공원의 사진...
+</figcaption>
+</figure>
+</article>
+</section>
+<br><br><br><br><br>
+<hr>
+<footer>
+<address>
+by <a href="http://http://www.webguru.pe.kr" target="_blank">webguru</a> ,
+mailto:<a href="mailto:funcom@gmila.com">funcom@gmail.com</a>
+</address>
+이 문서는 HTML 5를 기준으로 작성되었습니다.
+</footer>
+</body>
+</html>

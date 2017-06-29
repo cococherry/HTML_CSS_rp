@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Form 태그 테스트</title>
+</head>
+<body>
+<form>
+  <fieldset>
+  	<legend>주문 내용</legend>
+  	<ol>
+  	  <li>
+  	  <!-- 라벨과 input 태그의 id 값을 세트로 묶어주기 위함 -->
+  	    <label for="prod">상품명</label>
+  	    <input type="text" id="prod" size="15" required>
+  	  </li>
+  	  <li>
+  	    <label for="num">주문 개수</label>
+  	    <input type="number" min="1" max="3" value="1">
+  	  </li>
+  	</ol>
+  </fieldset>
+  <button type="submit" value="등록">등록</button> &nbsp;
+  <button type="reset" value="취소">취소</button>
+</form>
+<form>
+	<label for="search">검색 </label>
+	<input type="search" id="search" autocomplete="on">
+	<button type="submit">검색하기</button>
+	<br>
+	<br>
+	<label for="prodid">색상</label>
+	<input id="prodid" type="text" list="mycolor">
+	<datalist id="mycolor">
+		<option value="black" label="검정색">
+		<option value="white" label="흰색">
+		<option value="skyblue" label="하늘색">
+	</datalist>
+</form>
+</body>
+</html>

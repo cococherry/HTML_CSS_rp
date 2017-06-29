@@ -4,6 +4,8 @@
   <head>
     <meta charset="UTF-8">
     <title>test Form tag</title>
+   <!-- 별도로 작성된 css 파일을 link로 연결!! -->
+   <LINK REL="stylesheet" TYPE="text/css" HREF="css/main.css">
   </head>
   <body>
   	<h1>testHTMLProject</h1>
@@ -15,10 +17,12 @@
   	  <hr>
   	  <div>
   	      <form method="post" action="">
-  	      검색 : <input type="search" name="keyword" value="키워드를 입력하세요.">
+  	      검색 : <input type="search" name="keyword" placeholder="키워드를 입력하세요.">
   	      <br><br><input type="submit" value="검색하기">
-  	      </form>
+  	   	  </form>
   	      <br><br>
+  	  </div>
+  	  <section>
   	      <h2>회원가입 창 만들기</h2>
   	      <form method="post" action="회원가입값받을클래스명">
   	      <table border="1" bordercolor="white" width="500" align="center">
@@ -51,8 +55,8 @@
   	          <option value="gmail.com">gmail.com
   	          <option value="nate.com">nate.com
   	          <option value="paran.com">paran.com
-  	          <option value="hotmail.net">hotmail.net -->
-  	          </select></td>
+  	          <option value="hotmail.net">hotmail.net
+  	          </select> --></td>
   	        </tr>
   	        <tr>
   	          <td bgcolor="#b3d9ff">전화번호 </td>
@@ -107,7 +111,7 @@
   	        </tr>
   	        <tr>
   	         <td bgcolor="#b3d9ff">하고 싶은 말</td>
-  	         <td><TEXTAREA rows="4", cols="25" NAME="comment"></TEXTAREA></td>
+  	         <td><TEXTAREA rows="4" cols="25" NAME="comment"></TEXTAREA></td>
   	        </tr>
   	        <tr>
   	          <td colspan="2" align="center">
@@ -117,9 +121,10 @@
   	        </tr>
   	      </table>
   	      </form>
-  	  </div>
+  	  </section>
   	  <hr>
   	  <div>
+  	  <section>
   	  <h2>게시글 등록하기</h2>
   	  <form method="post" action="">
   	  <table>
@@ -162,6 +167,7 @@
   	    </tr>
   	  </table>
   	  </form>
+  	  </section>
   	  </div>
   </body>
 </html>
