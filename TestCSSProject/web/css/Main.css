@@ -2,10 +2,10 @@
 
 section {
 	/*border : #66ff99 dashed 10px;*/
-	background : #e6ffee;
+	background: #e6ffee;
 }
 
-header h1{
+header h1 {
 	/*header 안에 있는 h2에만 적용하겠다!*/
 	color: navy;
 }
@@ -13,17 +13,18 @@ header h1{
 header ul {
 	list-style: none;
 }
-header, div, h1, ul{
+
+header, div, h1, ul {
 	/*여러 태그에 원하는 내용을 적용하겠다!!*/
-	margin : 0px;
+	margin: 0px;
 }
 
-header ul li a{
+header ul li a {
 	text-decoration: none;
 	width: 120px;
 	height: 35px;
 	background: black;
-	color: white; 
+	color: white;
 	display: block; /*해당 영역을 생성하여 처리*/
 	text-align: center;
 	padding-top: 13%;
@@ -33,7 +34,7 @@ header ul li a{
 	border-radius: 5px;
 }
 
-header ul li{
+header ul li {
 	width: 120px;
 	height: 35px;
 	float: left;
@@ -41,15 +42,67 @@ header ul li{
 }
 
 div#area1 {
-	clear:left;
+	clear: left;
 }
 
 * {
 	/*모든 태그에 적용하겠다!*/
-	background : #66ff99;
-	padding : 0px;
+	background: #66ff99;
+	padding: 0px;
 }
 
 div.area1 {
-	font-size : 2em; /*em 은 현재 사이즈의 2배*/
+	font-size: 2em; /*em 은 현재 사이즈의 2배*/
+}
+
+div.rounded {
+	background-color: #FFFF99;
+	line-height: 20px;
+	width: 250px;
+	padding: 10px;
+	border: thin double #C90;
+	-webkit-border-bottom-left-radius: 15px;
+	-moz-border-radius-bottomleft: 15px;
+	-webkit-border-top-right-radius: 15px;
+	-moz-border-radius-topright: 15px;
+}
+
+.grad {
+	/* 불행히도 모질라만 지원 */
+	width: 300px;
+	padding: 10px;
+	border: 8px solid #000;
+	-moz-border-top-colors: #900 #C60 #F60 #F90 #FC0;
+	-moz-border-right-colors: #900 #C60 #F60 #F90 #FC0;
+	-moz-border-bottom-colors: #900 #C60 #F60 #F90 #FC0;
+	-moz-border-left-colors: #900 #C60 #F60 #F90 #FC0;
+}
+
+.text1 {
+	color: #fff;
+	width: 300px;
+	background: black; font-size : 25px;
+	text-shadow: 0px 1px 8px #fff;
+	font-size: 25px;
+}
+
+.text2 {
+	color: #fff;
+	width: 300px;
+	background: black;
+	font-size: 25px;
+	text-shadow: 1px -3px 8px #6F0;
+}
+
+.text3 {
+	width: 300px;
+	height: 30px;
+	text-align: center;
+	padding-top: 5px;
+	background: black;
+	font-size: 25px;
+	text-shadow: 1px 1px 4px #fff;
+	color: #000;
+	text-shadow: 0 0 4px #ccc, 0 -5px 4px #ff3, 2px -10px 6px #fd3, -2px
+		-15px 11px #f80, 2px -19px 18px #f20;
 }
