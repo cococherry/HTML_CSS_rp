@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트 Input 테스트 페이지</title>
+<style>
+    #box{
+        width:300px;
+        height: 100px;
+        border : 3px solid red;
+        background-color: pink;
+    }
+</style>
+   <script type="text/javascript">
+    //window.onload = testConfirm();
+/*    onload = function(){ // 무명 함수 : 이벤트 핸들러
+        testConfirm();
+    }*/
+</script>
+</head>
+<body>
+<!-- <body onload="testConfirm();"> -->
+	<h1>자바 스크립트로 값 입력 받기</h1>
+	<h3>
+		<ol>
+			<li onclick="testConfirm();">window.confirm() 로 true/false 값 입력
+				받기 테스트</li>
+			<script>
+				function testConfirm() {
+					var result = confirm("찬성하면 확인, 반대하면 취소 버튼을 누르세요!");
+					if (result)
+						alert('찬성하셨습니다.');
+					else
+						alert('반대하셨습니다.');
+				}
+			</script>
+			<li onclick="">'==='개 짜리도 사용 가능, 의미는 값과 자료형 모두 동일한 지 확인</li>
+			<!-- 
+			<script>
+				//var isMan = confirm("당신은 남자입니까?");
+				//document.write("결과: " + isMan + "<br />");
+				// onload 는 실행하면 바로 확인
+				window.onload = function() {
+					if (confirm("당신은 남자입니까?") === true) {
+						gender = "남";
+					} else {
+						gender = "여";
+					}
+					document.body.innerHTML += gender + "탕으로 가시오.";
+					//window.onload 이벤트가 발생 후에 처리되기 때문에
+					//document.body를 사용하는 데 문제가 없다.
+				}
+				//window가 로드되기 전에 document.body 객체를 사용하면
+				//에러가 발생한다.
+				//document.write(gender + "탕으로 가시오." );
+			</script> 
+			-->
+			<li onclick="testPrompt();">prompt() 메소드를 통해 입력받은 값을 출력하기</li>
+			<script>
+                function testPrompt(){
+                    var ans = prompt('고향이 어디인가요?');
+                    alert(ans+'이시군요!!');
+                }
+            </script>
+            <li>document.getElementById() 로 태그의 정보를 읽어드리기 테스트</li>
+            <input type="text" id="nameTF">
+            &nbsp;&nbsp;
+            <button onclick="inputTFValue();">클릭하세요.</button>
+            <script type="text/javascript">
+                function inputTFValue(){
+                    var inputValue = document.getElementById('nameTF').value;
+                    alert('입력된 값 : '+inputValue);
+                }
+            </script>
+            <!-- DOM : Document(문서) Object(태그) Model -->
+            <li>id를 이용한 테그 정보 변경 테스트</li>
+            <button onclick="changeDiv();">div 정보 바꾸기</button>
+            <br>
+            <div id="box">사랑합니다.</div>
+            <script type="text/javascript">
+                //function changeDiv(){
+                changeDiv = function(){ // 함수 포인터
+                    var box = document.getElementById('box');
+                    box.style.backgroundColor = "olive";
+                    alert("I`m sorry "+box.innerHTML);
+                    box.innerHTML = '고맙습니다.';
+                }
+            </script>
+            <button onclick="changeLi();">li 배경 변경</button>
+            <script>
+                changeLi = function(){
+                    var li = document.getElementsByTagName("li");
+                    alert(li[0].innerHTML+"<br>"+
+                         li[1].innerHTML+"<br>"+
+                         li[2].innerHTML+"<br>"+
+                         li[3].innerHTML);
+                    li[3].style.backgroundColor = "yellow";
+                }
+            </script>
+            <li>input 태그와 value 속성 다루기 테스트</li>
+            <input type="text" id="userName" value="성명입력" onclick="this.value='';">
+            <input type="button" id="btn" value="확인하기" onclick="checkValue(this)">
+            <script>
+                checkValue = function(element){
+                    var inputText = document.getElementById("userName");
+                    var userNameValue = inputText.value;
+                    inputText.size = userNameValue.length;
+                    element.value = userNameValue+"님은 이미 확인 하셨습니다.";
+                    element.onclick="";
+                }
+            </script>
+		</ol>
+	</h3>
+</body>
+</html>

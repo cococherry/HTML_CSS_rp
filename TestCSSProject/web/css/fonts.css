@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+/*fonts.css*/
+@font-face {
+font-family: neamaum;
+src:url('../fonts/FZSong_Super.ttf') format('truetype');
+}
+
+.normal_text { /* 따로 글꼴 지정하지 않았을 때 */
+font-family: 궁서체;
+font-size:80px;
+color:#900;
+}
+
+.text1{
+font-family: neamaum;
+font-size:80px;
+color: #006;
+column-count: 3;
+column-gap: 10px;
+column-rule:  2px dotted blue;
+-moz-column-count: 3;
+-moz-column-gap: 10px;
+-moz-column-rule:  2px dotted blue;
+-webkit-column-count: 3;
+-webkit-column-gap: 10px;
+-webkit-column-rule:  2px dotted blue;
+}
