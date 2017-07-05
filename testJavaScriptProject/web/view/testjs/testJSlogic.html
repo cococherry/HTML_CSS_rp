@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>변수, 연산자, 자료형</title>
+<script type="text/javascript" src="../js/test.js"></script>
+<script type="text/javascript">
+    //onload = testFunc1();
+/*   onload = function(){
+        testFunc1();
+    }*/
+</script>
+<style>
+    div{
+        width : 400px;
+        height: 120px;
+        border: 2px solid blue;
+        background-color: cornflowerblue;
+    }
+</style>
+</head>
+<body>
+<!-- <body onload="testConfirm();"> -->
+	<h1>자바스크립트 변수, 연산자, 자료형 테스트</h1>
+	<h3>
+		<ol>
+		    <li>문서가 로딩이 완료되면 자동으로 경고창 출력하기 : typeof(값)</li>
+		    <!-- typeof(값) => 자료형이 무엇인지 확인 가능 -->
+		    <li>자바스크립트에서 제공하는 다이얼로그
+		        <ul>
+		            <li>메시지 확인을 위한 alert() 창
+		            <input type="button" value="확인" onclick="showAlert()"></li>
+		            <li>메시지 확인/취소 버튼을 제공하는 confirm() 창
+		            <input type="button" value="확인" onclick="showConfirm()"></li>
+		            <li>메시지 출력과 값 입력을 위한 prompt() 창
+                    <input type="button" value="확인" onclick="showPrompt()"></li>
+                    <div id="box1">
+                    </div>
+		        </ul>
+		    </li>
+		    <li>입력양식 input태그를 통한 입력방식:<input type="button" value="계산하기" onclick="calculator()"><br>
+		    <input type="text" id="num1" placeholder="값 입력"> + 
+            <input type="text" id="num2" placeholder="값 입력"> = 
+            <input type="text" id="result" readonly></li>
+		    <li>자바스크립트 간단 계산기 : 문자열을 숫자로 바꾸기</li>
+		    첫번째 값 : <input type="text" id="val1" placeholder="값 입력"><br>
+		    두번째 값 : <input type="text" id="val2" placeholder="값 입력"><br>
+		    <input type="button" value="+" onclick="calculator2(this.value);"> &nbsp;
+		    <input type="button" value="-" onclick="calculator2(this.value);"> &nbsp;
+		    <input type="button" value="x" onclick="calculator2(this.value);"> &nbsp;
+		    <input type="button" value="/" onclick="calculator2(this.value);"> &nbsp;
+            <input type="button" value="%" onclick="calculator2(this.value);"><br>
+            계산 결과 : <div id="box2"></div>
+		    <li>비교연산자 : === 와 !== 연산자 확인 (값과 자료형 비교)
+		    <input type="button" value="Check!" onclick="check();"></li>
+		    <li>switch문 case에 조건식 사용 가능함<input type="button" value="Check!" onclick="checkSwitch();"></li>
+		    <li>짧은 조건문 사용 테스트 : Boolean 값 논리 연산자 실행<input type="button" value="Check!" onclick="checkLogic();"></li>
+		</ol>
+	</h3>
+	<table>
+	    <tr>
+	        <td><div id="jh1">
+	            현재 체력 : 12
+	        </div></td>
+	        <td><div id="jh2">
+	            현재 체력 : 12
+	        </div></td>
+	    </tr>
+	    <tr align="center">
+	        <td><button onclick="attack(1);">jh2 때리기</button></td>
+	        <td><button onclick="attack(2);">jh1 때리기</button></td>
+	    </tr>
+	</table>
+	
+	<a href="../../index.jsp">이전으로 가기</a>
+</body>
+</html>
