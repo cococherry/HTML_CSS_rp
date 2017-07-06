@@ -103,7 +103,7 @@ function checkLogic(){
     input%2 == 0 || alert('홀수 입니다.');
     input%2 == 0 && alert('짝수 입니다.'); // if / else 축약문
 }
-
+/*
 function attack(number) {
     if (number == 1) {
         document.getElementById("jh1").innerHTML += "<br>정훈" + number + "는 다른 정훈을 때렸다!<br>";
@@ -116,4 +116,4 @@ function attack(number) {
         document.getElementById("jh1").innerHTML += "현재 체력 : " +
             document.getElementById("jh1").innerHTML.substring(8, 10);
     }
-}
+}*/

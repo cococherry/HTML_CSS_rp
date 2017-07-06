@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>event</title>
+    <script type="text/javascript">
+        <!-- 스크립트 블럭 내에서 이벤트 핸들러 제어하기 -->
+        // 태그 객체.onEvent명 = function(){ 구동 내용 };
+        window.onload = function(){
+            var job = document.getElementById("job");
+            job.onchange = function(){
+                alert("선택 값 : "+job.value);
+            }
+            job.onmouseover = function(){
+                job.style.backgroundColor = "#6F9";
+            }
+            job.onmouseout = function(){
+                job.style.backgroundColor = "white";
+            }
+            
+            var btn = document.getElementById("btn");
+            btn.onclick = function(e){
+                console.log(e.target);
+                console.log(e.x);
+                console.log(e.y);
+                console.log(e.target.offsetLeft);
+                console.log(e.target.offsetTop);
+            }
+            
+            var list = document.getElementsByName("list");
+            var nation = document.getElementById("nation");
+            var btn2 = document.getElementById("btn2");
+            btn2.onclick = function(){
+                alert(nation.value);
+                /*for(var i in list){
+                    list[i].style.backgroundColor = "";
+                }*/
+                for(var i = 0; i<list.length ; i++){
+                    list[i].style.backgroundColor = "";
+                }/*
+                list[0].style.backgroundColor = "";
+                list[1].style.backgroundColor = "";
+                list[2].style.backgroundColor = "";
+                list[3].style.backgroundColor = "";*/
+                list[Number(nation.value)].style.backgroundColor = "#6F9";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>자바스크립트 이벤트 핸들링 테스트</h1>
+    <h3><ol>
+        <li>인라인 이벤트 핸들러 : HTML 태그에 onEvent로 직접 이벤트 핸들러 다는 것 &nbsp;
+        <input type="button" value="테스트해보기" onclick="alert('인라인 이벤트 핸들러 구동 확인!!!');"></li>
+        <li>콜백 함수를 이용한 자바스크립트 블럭 내에서 이벤트 핸들러 제어하기
+        <select id="job">
+            <option value="office" selected>회사원</option>
+            <option value="programmer">프로그래머</option>
+            <option value="student">학생</option>
+        </select></li>
+        <li>이벤트 객체가 가진 정보 확인하기
+        <button id="btn">확인하기</button></li>
+        <li>이벤트 발생 함수 호출 예제 &nbsp;
+        <select id="nation">
+            <option value="" selected>번호를 선택하세요.</option>
+            <option value="0">No.0</option>
+            <option value="1">No.1</option>
+            <option value="2">No.2</option>
+            <option value="3">No.3</option>
+        </select>
+        &nbsp; <button id="btn2">테스트하기</button>
+        <ul>
+            <li name="list">Korea</li>
+            <li name="list">Japan</li>
+            <li name="list">China</li>
+            <li name="list">Betnam</li>
+        </ul>
+        </li>
+        <li>DOM Medel2의 이벤트</li>
+    </ol></h3>
+    <a href="../../index.jsp">이전으로 가기</a>
+</body>
+</html>

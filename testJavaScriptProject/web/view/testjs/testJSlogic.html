@@ -8,7 +8,66 @@
     //onload = testFunc1();
 /*   onload = function(){
         testFunc1();
+        //태그대상.onEventName = function(){};
     }*/
+    onload = function(){
+        var btn7 = document.getElementById("btn7");
+        btn7.onclick = function(){
+            document.getElementById('box7').innerHTML = sum(10, 20);
+        };
+        
+        document.getElementById("addDiv").onclick = function(){
+            //var ref = new MkDiv();
+            //var divTag = ref.make("box99",300,50,"RED");
+            var divTag = new MkDiv().make("box99",300,50,"RED");
+            document.body.appendChild(divTag); 
+        };
+        
+        document.getElementById("addSpectrum").onclick = function(){
+            var ref = new MkDiv();
+            var colors = ["Red","Orange","Yellow","Green","Blue","Navy","Violet"];
+            for(var i = 0; i<7 ; i++){
+                for(var j = 0; j<7 ; j++){
+                    var newDiv = ref.make("id"+j, 25, 25, colors[j], 1-Number("0."+i));
+                    newDiv.style.float = "left";
+                    document.body.appendChild(newDiv);
+                }
+                document.body.innerHTML += "<br><br>";
+            }
+        };
+    }
+    // 객체 만들기는 자바의 생성자와 비슷,
+    // 객체인지 확인은 첫글자가 대문자인지로 확인함
+    function MkDiv(){
+        this.element = null; // 멤버변수
+        this.make = function(id, w, h, c){
+            // 멤버 함수(메소드)
+            this.element = document.createElement("div");
+            this.element.id = id;
+            this.element.style.width = w+"px";
+            this.element.style.height = h+"px";
+            this.element.style.backgroundColor = c;
+            console.log(this);
+            return this.element;
+        }
+        
+        this.make = function(id, w, h, c, o){
+            // 멤버 함수(메소드)
+            this.element = document.createElement("div");
+            this.element.id = id;
+            this.element.style.width = w+"px";
+            this.element.style.height = h+"px";
+            this.element.style.backgroundColor = c;
+            this.element.style.opacity = o;
+            console.log(this);
+            return this.element;
+        }
+    }
+    
+    function sum(x, y){
+        return x + y;
+    }
+    
 </script>
 <style>
     div{
@@ -55,23 +114,134 @@
 		    <input type="button" value="Check!" onclick="check();"></li>
 		    <li>switch문 case에 조건식 사용 가능함<input type="button" value="Check!" onclick="checkSwitch();"></li>
 		    <li>짧은 조건문 사용 테스트 : Boolean 값 논리 연산자 실행<input type="button" value="Check!" onclick="checkLogic();"></li>
+		    <li>자바스크립트 변수 : 지역변수와 전역변수(멤버변수 : window 객체// window가 최상위 객체임)</li>
+		        <ul>
+		            <li>지역변수 : var 변수명; 으로 선언한 변수</li>
+		            <script>
+                        var name; // 지역변수
+                        // 초기화(초기값 기록)하지 않으면 null이 됨
+                        console.log("name.aaa : "+name.aaa);
+                    </script>
+		            <li>전역변수(멤버 변수) : 변수명; 으로 선언한 변수(var 붙이지 않음)</li>
+		            <script>
+                        var name = "홍길동";  // 지역변수
+                        grade = 'A'; // 전역변수 (자동으로 window. 이 붙음; window. == this.)
+                        // 지역변수와 전역변수 But 지역이 바깥영역이기 
+                        // 때문에 전역변수가 된다.
+                        
+                        console.log("지역변수1\nname : "+name
+                                    +"\nwindow.name : "+window.name
+                                    +"\nthis.name : "+this.name);
+                        console.log("전역변수1\ngrade : "+grade
+                                    +"\nwindow.grade : "+window.grade
+                                    +"\nthis.grade : "+this.grade);
+                    </script>
+                    <script>// 다른 스크립트에서 사용해도 ERROR 없음!!
+                        console.log("지역변수2\nname : "+name
+                                    +"\nwindow.name : "+window.name
+                                    +"\nthis.name : "+this.name);
+                        console.log("전역변수2\ngrade : "+grade
+                                    +"\nwindow.grade : "+window.grade
+                                    +"\nthis.grade : "+this.grade);
+                        
+                        function testValFn(){
+                            var school = "My School"; // 지역변수
+                            var name = "홍길라미";
+                            school2 = "Your School"; // 전역변수
+                            console.log(school+", "+school.length);
+                            console.log(window.school2+", "+window.school2.length);
+                            console.log(name+", "+this.name);
+                            // this. 을 붙이면 전역변수의 name을 불러온다!!
+                        }
+                        
+                        testValFn();
+                        console.log(school+", "+school.length);
+                        console.log(window.school2+", "+window.school2.length);
+                    </script>
+                    <!--
+                        배 : 배열 연산자(괄호)
+                        단 : 단항연산자
+                        산 : 산술연산자
+                        시 : 시프트연산자
+                        비 : 비교 연산자
+                        논 : 논리 연산자
+                    -->
+		        </ul>
+		    <li>문자열과 숫자의 결합 : 문자열 + 숫자, 숫자 + 문자열</li>
+		    <script>
+                var value1 = " JavaScript ";
+                var value2 = 1;
+                var value3 = 99;
+                
+                console.log(value1 + value2 + value3);
+                console.log(value3 + value2 + value1);
+            </script>
+		    <li>배열의 선언과 값 기록, 사용 : Array 객체 사용</li>
+		    <script type="text/javascript">
+                var arr1 = new Array(5);
+                var arr2 = new Array("오징어","꼴뚜기","대구","명태","거북이");
+                //var arr2 = ["오징어","꼴뚜기","대구","명태","거북이"];
+                var arr3 = new Array();
+                
+                for(var i = 0; i<arr1.length ; i++){
+                    arr1[i] = (i+1) * 100;
+                    arr3.push((i+1) * 10);
+                }
+                for(var i = 0; i<arr1.length ; i++){
+                    document.write("arr1["+i+"] = " + arr1[i] + ", ");
+                    document.write("arr2["+i+"] = " + arr2[i] + ", ");
+                    //document.write("arr3["+i+"] = "+arr3[i]+"<br>");
+                    // arr3 은 임의로 지정한 배열이기 때문에 push와 pop만 사용해야 합니다.
+                    document.write("arr3["+i+"] = "+arr3[i]+"<br>");
+                }
+            </script>
+            <li>배열의 초기화 방법</li>
+            <script>
+                var arr1 = new Array("apple","banana","melon","grape","orange");
+                var arr2 = [11, 22, 33, 44, 55];
+                var liTags = document.getElementsByTagName("li");
+                
+                console.log(arr1.length+", "+arr1);
+                console.log(arr2.length+", "+arr2);
+                console.log(liTags.length+", "+liTags);
+            </script>
+            <li>for in 문 테스트</li>
+            <h3>목록 자동 추가하기 <input type="button" value="클릭!" onclick="addList();"></h3>
+            <ul id="u">
+                <script>
+                    function addList(){
+                        var arr1 = new Array("apple","banana","melon","grape","orange");
+                        
+                        var ul = document.getElementById("u");
+                        for(var i in arr1){
+                            var li = document.createElement("li");
+                            li.innerHTML = arr1[i];
+                            ul.appendChild(li);
+                        }
+                    }
+                </script>
+            </ul>
+            <li>익명 함수 테스트 : <input type="button" value="확인하기" onclick="testAnonymus();"></li>
+            <script>
+                testAnonymus = function(){
+                    alert('익명 함수 구동 확인함!!');
+                }
+            </script>
+            <li>스스로 실행하는 함수 테스트 : <input type="button" value="확인하기" onclick="
+            (function(){
+                    alert('스스로 실행하는 함수 구동 완료');
+                })();">
+            </li>
+            <li>함수 매개변수와 전달인자, 리턴 처리 테스트
+            <input type="button" id="btn7" value="확인하기">
+            </li><div id="box7"></div>
+            <li>객체를 만들고 작성된 메소드로 div 추가하기 &nbsp;
+            <input type="button" id="addDiv" value="div객체 추가"></li>
+            <li>무지개색 스펙트럼 만들기
+            <input type="button" id="addSpectrum" value="스펙트럼 만들기"></li>
 		</ol>
 	</h3>
-	<table>
-	    <tr>
-	        <td><div id="jh1">
-	            현재 체력 : 12
-	        </div></td>
-	        <td><div id="jh2">
-	            현재 체력 : 12
-	        </div></td>
-	    </tr>
-	    <tr align="center">
-	        <td><button onclick="attack(1);">jh2 때리기</button></td>
-	        <td><button onclick="attack(2);">jh1 때리기</button></td>
-	    </tr>
-	</table>
-	
 	<a href="../../index.jsp">이전으로 가기</a>
+	<!-- MkDiv() 객체에 의해 div 태그가 아래에 추가된다. -->
 </body>
 </html>

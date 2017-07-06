@@ -16,7 +16,7 @@
 	<li><a href="view/testjs/testJSOutput.html">자바스크립트에서 출력하는 방법</a></li>
 	<li><a href="view/testjs/testJSInput.html">자바스크립트로 값 입력받는 방법</a></li>
 	<li><a href="view/testjs/testJSlogic.html">자바스크립트 변수, 연산자, 자료형 테스트</a></li>
-	<li></li>
+	<li><a href="view/testjs/testEvent.html">자바스크립트에서 이벤트 다루기</a></li>
 	<li></li>
 	<li></li>
 	<li></li>
