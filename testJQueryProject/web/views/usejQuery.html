@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery 사용 방법</title>
+    <!-- jQuery 현재 문서에 첨부 -->
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        /*window.onload = function(){
+            alert("문서 읽기 완료!!");
+        }*/
+        //jQuery(document).ready(function(){ // window.onload
+        //$(document).ready(function(){
+        $(function(){
+            alert("문서 읽기 완료!!");
+        });
+    </script>
+</head>
+<body>
+   <h2><ol>
+       <li>CDN 방식 : 딜리버리가 제공하는 URL로 jQuery소스를 링크해서 사용하는 방식</li>
+       <li>직접 다운받아 사용하는 방식 (권장):
+       웹 APP 루트 안에 폴더를 지정하여, 다운 받은 *.js 파일을 저장하고 'src'로 지정하여 사용!!</li>
+   </ol></h2>
+    <button onclick="location.href='../index.html';">돌아가기</button>
+</body>
+</html>

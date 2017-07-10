@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Selector 실습 1</title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+    $(function(){
+        $('h1').css('color','red');
+        $('h1#text').css('color','orange');
+        $('h1[name=text]').css('color','yellow');
+        $('h1.text').css('color','green');
+    });
+    </script>
+</head>
+<body>
+   <h1>Text1</h1>
+   <h1 id="text">Text2</h1>
+   <h1 name="text">Text3</h1>
+   <h1 class="text">Text4</h1>
+    <button onclick="location.href='baseSelector.html';">돌아가기</button>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Selector 실습 3</title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        function clear1(){
+            // 그냥 clear 는 예약어이기 때문에 함수를 생성해도 읽을 수 없어
+            // 초기화 버튼 활성화를 위해 임의로 함수이름을 변경하였습니다.
+            $('table *').removeAttr("style");
+        };
+        function click1(){
+            clear1();
+            $('tr:contains(가) td:gt(0)').css('color','yellow');
+            //$('tr:eq(1) td:not(td:eq(0))').css('color','yellow');
+        };
+        function click2(){
+            clear1();
+            $('tr:contains(나) td:gt(0)').css('color','yellow');
+        };
+        function click3(){
+            clear1();
+            $('tr:lt(3) td:nth-child(3n+2)').css('color','yellow');
+            //$('td:nth-child(3n+2):lt(2)').css('color','yellow');
+        };
+        function click4(){
+            clear1();
+            $('tr:lt(3) td:nth-child(3n)').css('color','yellow');
+        };
+        function click5(){
+            clear1();
+        };
+    </script>
+</head>
+<body>
+   <table border="1">
+       <tr><th>구분</th> <th>A</th> <th>B</th></tr>
+       <tr><td>가</td> <td>10</td> <td>10</td></tr>
+       <tr><td>나</td> <td>20</td> <td>20</td></tr>
+       <tr><td>계</td> <td>30</td> <td>30</td></tr>
+   </table>
+   <input type="button" value="[가]색 변경" onclick="click1();">
+   <input type="button" value="[나]색 변경" onclick="click2();">
+   <input type="button" value="[A]색 변경" onclick="click3();">
+   <input type="button" value="[B]색 변경" onclick="click4();">
+   <input type="button" value="초기화" onclick="clear1();">
+    <button onclick="location.href='baseSelector.html';">돌아가기</button>
+</body>
+</html>
