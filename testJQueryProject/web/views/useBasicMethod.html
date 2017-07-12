@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>기본 메소드 사용법</title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+    <style>
+        ul.prac li {
+            list-style: none;
+            float: left;
+        }
+        
+        div {
+            color: red;
+            text-align: center;
+            cursor: pointer;
+            font-weight: bolder;
+            width: 300px;
+        }
+        
+        .high_light_0 {
+            background: yellow;
+        }
+        
+        .high_light_1 {
+            background: orange;
+        }
+        
+        .high_light_2 {
+            background: blue;
+        }
+        
+        .high_light_3 {
+            background: green;
+        }
+        
+        .high_light_4 {
+            background: red;
+        }
+
+    </style>
+    <script>
+        // 1번 예제
+        $(function() {
+            // document.getElementById("btn1").onclick = function(){};
+            $('#btn1').click(
+                function() {
+                    $('div').each(function() {
+                        if (this.style.color != 'blue') { //javascript 코드
+                            $(this).css('color', 'blue'); //jQuery 코드
+                        } else {
+                            $(this).css('color', '');
+                        }
+                    });
+                });
+        });
+        /*  PDF 교재 소스
+            $(document.body).click(function() {
+                $("div").each(function(i) {
+                    if (this.style.color !== "blue") {
+                        this.style.color = "blue";
+                    } else {
+                        this.style.color = "";
+                    }
+                });
+            });*/
+
+        // 2번 예제
+        //$.each(배열객체, function(index, item){});
+        // <script>와 <\/script> 태그 사이에 스크립트 코드가 있고 src 속성도 사용했다면
+        // 브라우저는 스크립트 파일을 내려받아 실행하며 인라인 코드는 무시합니다.
+        $(document).ready(function() {
+            var array = [{
+                    name: 'A',
+                    link: "http://www.naver.com"
+                },
+                {
+                    name: 'B',
+                    link: "http://www.google.com"
+                },
+                {
+                    name: 'C',
+                    link: "http://www.w3c.org"
+                },
+                {
+                    name: 'D',
+                    link: "http://www.daum.net"
+                }
+            ];
+            var output = "";
+            $.each(array, function(index, item) {
+                //var output = "";
+                output += "<a href=" + item.link + ">";
+                output += "<h1>" + item.name + "</h1></a>";
+
+                //document.body.innerHTML += output;
+            });
+            $('#area1').html(output);
+        });
+
+        // 3번 예제
+        // 버튼 클릭 시 클래스 속성 추가/제거 토글처리
+        /*$(function(){
+            $('button:not("#btn1")').each(function(index){
+            $(this).click(function(){
+                $('h4').each(function(i, element){
+                    if(i == index){
+                        if($(element).is('.high_light_'+i)){
+                            $(this).removeClass('high_light_'+i);
+                        } else {
+                            $(this).addClass('high_light_'+i);
+                        }
+                  // $(this).toggleClass('high_light_'+i);
+                        console.log(i);
+                    }
+                });
+            });
+        });
+        });*/
+
+    </script>
+</head>
+
+<body>
+    <div>Click here</div>
+    <div>to iterate through</div>
+    <div>these divs.</div>
+    <ol>
+        <li>each(function(index,item){}) 메소드 테스트</li>
+        for문과 같은 반복 처리를 자동으로 해주는 메소드임<br>
+        <button id="btn1">확인하기</button>
+        <li>each(object, function(){}) 메소드 테스트</li>
+        <span id="area1"></span>
+        <li>태그에 Class속성 추가/제거하기 addClass() / removeClass()</li>
+        <h4>item - 0&nbsp;<button>클릭!</button></h4>
+        <h4>item - 1&nbsp;<button>클릭!</button></h4>
+        <h4>item - 2&nbsp;<button>클릭!</button></h4>
+        <h4>item - 3&nbsp;<button>클릭!</button></h4>
+        <h4>item - 4&nbsp;<button>클릭!</button></h4>
+        <li>attr() 메소드 : attr('속성') - 속성값 조회(get), attr('속성', '값') - 속성값 추가/변경
+        </li>
+        <img src="../images/button.jpg">&nbsp;<button onclick="changeSize();">클릭!</button>
+        <script>
+            function changeSize() {
+                //$('img').attr('width','300');
+                if ($('img').attr('width')) {
+                    $('img').removeAttr('width');
+                } else {
+                    $('img').attr('width', '300');
+                }
+            };
+
+        </script>
+        <li>img 태그에 배열로 src 속성 값 적용하기</li>
+        <div id="area2">
+            <img><br>
+            <img><br>
+            <img><br>
+            <img><br>
+            <img><br>
+            <img><br>
+            <img><br>
+            <img><br>
+            <button onclick="insertImg();">클릭!</button><br><br>
+        </div>
+        <script>
+            function insertImg() {
+                $('#area2 > img').each(function(index) {
+                    $(this).attr({ //CSS는 속성을 '' 로 구분해야함, attr만 다름
+                        src: "../images/ph" + (index + 1) + "_s.jpg",
+                        alt: "image_" + (index + 1)
+                    });
+                });
+            };
+            
+            /*  강사님 방식
+            function addSrc(){
+			var imgArray = new Array("../images/ph1_s.jpg", "../images/ph2_s.jpg", "../images/ph3_s.jpg");
+
+			$('div#area2').css('width', '600px');
+			$('div#area2 > img').each(function(index, imgTag){
+				$(imgTag).attr('src', imgArray[index]);
+			});
+		}
+            */
+
+        </script>
+        <li>일정 시간 간격으로 자동실행하는 함수 테스트 : setInterval() 메소드 사용함</li>
+        <div id="area3">
+            <h3>HeadLine - 3 - </h3>
+        </div>
+        <!-- 전자 시계 만들기
+        <input type="number" id="hour" readonly> : 
+        <input type="number" id="min" readonly> : 
+        <input type="number" id="sec" readonly>
+        <script>
+             var second = 57;
+             var minute = 0;
+            $(function(){  
+                    setInterval(function(){
+                 if(second < 59){
+                     second += 1;
+                 } else {
+                    minute += 1;
+                    second = 0;
+                    $('#min').val(minute);
+                 }
+                    $('#sec').val(second);
+               },1000);
+            });
+        </script>-->
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+    <br><br>
+    <ul class="prac">
+        <li><button onclick="location='useBasicMethod_1.html';">실습1</button>&nbsp;&nbsp;</li>
+        <li><button onclick="location='useBasicMethod_2.html';">실습2</button></li>
+    </ul><br><br>
+    <button onclick="location.href='../index.html';">뒤로가기</button>
+</body>
+
+</html>

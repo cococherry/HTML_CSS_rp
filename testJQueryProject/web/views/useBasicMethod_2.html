@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>useBasicMethod_2</title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+    <script>
+        var cnt = 0;
+
+        function addFile() {
+            $('div').first().append('<br>');
+            $('div').first().append('<input type="file">');
+            cnt++;
+        };
+
+        function delFile() {
+            if (cnt != 0) {
+                $('div br').last().remove();
+                $('div input[type="file"]').last().remove();
+                cnt--;
+            }
+        };
+
+    </script>
+</head>
+
+<body>
+    <div>
+        <input type="file">
+        <input type="button" value="추가" onclick="addFile();"> &nbsp;&nbsp;
+        <input type="button" value="삭제" onclick="delFile();">
+    </div><br>
+    <button onclick="location.href='useBasicMethod.html';">뒤로가기</button>
+</body>
+
+</html>
