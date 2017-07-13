@@ -9,9 +9,191 @@
             background: black;
             color: white;
         }
+        
+        div#test {
+            background: black;
+            width: 200;
+            height: 200;
+        }
+        
+        .outer {
+            width: 200px;
+            height: 200px;
+            background: orange;
+            padding: 50px
+        }
+        
+        .inner {
+            width: 100%;
+            height: 100%;
+            background: pink;
+        }
 
     </style>
     <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+    <h1>제이쿼리 이벤트 메소드 사용법</h1>
+    <h3></h3>
+    <ul>
+        <li>hover(mouseEnter + mouseLeave) 테스트</li>
+        두가지 동작에 대한 콜백 함수 적용해야 함<br> mouseEnter : 대상 위에 마우스 커서를 갖다 대었을 때 <br> mouseLeave : 대상 위에서 마우스 커서가 벗어났을 때 <br>
+        <div id="box1">
+            <h2>Hello World !!</h2>
+        </div>
+        <li>이벤트 자동 발생시키는 메소드 : trigger('이벤트명')</li>
+        <div id="box2">
+            <h2>Start 1 : </h2>
+            <h2>Start 2 : </h2>
+        </div>
+        <button onclick="starPrint();">클릭!</button>
+        <li>이벤트용 콜백 함수 따로 작성하여 호출하고, data 매개변수 적용 테스트</li>
+        <button id="btn2">클릭!</button>
+        <li>이벤트 전달 막기 테스트</li>
+        <hr>
+        <h3>중첩 사용된 태그에 같은 이벤트가 설정되어 있으면, 태그에 해당 이벤트가 발생하면 인접한 태그에 이벤트가 전달됨 : 이벤트 전달을 막을 필요가 있다 =&gt; event.stopPropagation() 사용함 </h3>
+        <h1 id="h" style="padding:10px; background:orange;">
+            <a href="www.google.co.kr" style="margin:10px; background:#6F9;">구글로 이동</a>
+        </h1>
+        <br>
+        <br>
+        <br>
+        <div id="test">
+            test
+        </div>
+        <li>이벤트 연결에 on() 메소드 사용 테스트</li>
+        <div id="wrap">
+            <h1>HeadLine</h1>
+        </div>
+        <script>
+            $(function() {
+                $(document).on("click", "#wrap > h1", function() {
+                    //$('#wrap').bind('click',function(){
+                    var length = $("#wrap > h1").length;
+                    var targetHTML = $(this).html();
+                    $("#wrap").append("<h1>" + length + "-" + targetHTML + "</h1>");
+                });
+            });
+
+        </script>
+        <li>마우스 이벤트 확인하기 mouseover와 mouseenter</li>
+        <div class="outer">
+            <div class="inner"></div>
+        </div>
+        <script>
+            $(document).ready(function() {
+                $(".outer").mouseover(function() {
+                    console.log("OVER");
+                    // 대상 영역을 밖에서 들어오거나 안에서 들어왔을 때 체크
+                });
+                $(".outer").mouseout(function() {
+                    console.log("OUT");
+                    // 대상 영역을 밖에서 나가거나 안에서 나갔을 때 체크
+                });
+                $(".outer").mouseenter(function() {
+                    console.log("ENTER");
+                    //대상 영역 밖에서 안으로 들어왔는지 체크
+                });
+                $(".outer").mouseleave(function() {
+                    console.log("LEAVE");
+                    //대상 영역 안에서 밖으로 나갔는지 체크
+                });
+            });
+
+        </script>
+        <li>글자 입력한 갯수로 확인</li>
+        <div>
+            <p>글 작성</p>
+            <h3>150</h3>
+            <textarea cols="70" rows="5"></textarea>
+        </div>
+        <script>
+            $(document).ready(function() {
+                $("textarea").keyup(function() {
+                    var inputLength = $(this).val().length;
+                    var remain = 150 - inputLength;
+
+                    if (remain < 51) {
+                        $('div h3').css('color', 'RED');
+                    } else {
+                        $('div h3').css('color', '');
+                    }
+
+                    if (remain <= 0 || $(this).keypress().which != 8) {
+                        alert("150자를 초과하셨네요!!");
+                        $(this).attr('readonly', 'true');
+                    } else {
+                        $(this).removeAttr('readonly', 'false');
+                        $("h3").html(remain);
+                    }
+                });
+            });
+
+        </script>
+        <li>입력양식 form 태그 관련 이벤트 테스트</li>
+        <form id="myform" method="post" action="">
+            <table>
+                <tr>
+                    <td>이 름</td>
+                    <td><input type="text" name="" id="name"></td>
+                </tr>
+                <tr>
+                    <td>비밀번호</td>
+                    <td><input type="password" name="" id="pwd"></td>
+                </tr>
+                <tr>
+                    <td>전송하기</td>
+                    <td><input type="submit" value="제출"></td>
+                </tr>
+            </table>
+        </form>
+        <script>
+            $(function() {
+                var nameVal = "";
+                var pwdVal = "";
+                $('#myform input[type="submit"]').on('click',
+                    function() {
+                        nameVal = $('#name').val();
+                        pwdVal = $('#pwd').val();
+                        alert(nameVal + "님의 비밀번호는 " + pwdVal + "입니다.");
+                    });
+            });
+
+        </script>
+        <li>체크박스의 체크상태가 변경되었을 때의 이벤트 테스트</li>
+        <input type="checkbox" name="" id="all">All<br><br>
+        <div id="chklist">
+            <input type="checkbox" name="" id="">A<br>
+            <input type="checkbox" name="" id="">B<br>
+            <input type="checkbox" name="" id="">C<br>
+            <input type="checkbox" name="" id="">D<br>
+        </div>
+        <script>
+            $(function() {
+                $('#all').change(function() {
+                    if (this.checked) {
+                        $('#chklist > input').attr('checked', 'true');
+                    } else {
+                        $('#chklist > input').attr('checked', 'false');
+                    }
+                });
+                /*$('#all').change(function() {
+                    if (this.checked)
+                        $('#chklist > input').attr('checked', true);
+                    else
+                        $('#chklist > input').attr('checked', false);
+                });*/
+            });
+
+        </script>
+        <li><a href="practice.html">이벤트 실습 : practice</a></li>
+        <li><a href="event1.html">event1</a></li>
+        <li><a href="event2.html">event2</a></li>
+        <li><a href="event3.html">event3</a></li>
+    </ul>
+    <button onclick="location.href='../index.html'">뒤로가기</button>
+
     <script>
         $(function() {
             $('div#box1 > h2').hover(function(event) {
@@ -39,53 +221,52 @@
             $('div#box2 > h2:last').trigger('click');
         };
 
-        function greet(event) {
-            console.log("Hello " + event.data.name);
-        };
-        //$('#btn2').bind('click',{name: "정훈"}, greet);
-        $('#btn2').on('click', {name: "개미"}, greet);
-
         $(function() {
-            $("h1 a").click(function(event) {
-                $(this).css("background", "blue");
-                alert("이동 막기");
-                event.preventDefault();
-                event.stopPropagation();
+            $('div#test').on('mouseenter', function() {
+                $(this).css('background', 'white');
             });
-            $("h1 a").bind("click", function() {
-                alert("연쇄 작동");
+            $('div#test').on('mouseleave', function() {
+                $(this).css('background', '');
             });
         });
 
-    </script>
-</head>
+        function greet(event) {
+            console.log("Hello " + event.data.name);
+        };
 
-<body>
-    <h1>제이쿼리 이벤트 메소드 사용법</h1>
-    <h3></h3>
-    <ul>
-        <li>hover(mouseEnter + mouseLeave) 테스트</li>
-        두가지 동작에 대한 콜백 함수 적용해야 함<br> mouseEnter : 대상 위에 마우스 커서를 갖다 대었을 때 <br> mouseLeave : 대상 위에서 마우스 커서가 벗어났을 때 <br>
-        <div id="box1">
-            <h2>Hello World !!</h2>
-        </div>
-        <li>이벤트 자동 발생시키는 메소드 : trigger('이벤트명')</li>
-        <div id="box2">
-            <h2>Start 1 : </h2>
-            <h2>Start 2 : </h2>
-        </div>
-        <button onclick="starPrint();">클릭!</button>
-        <li>이벤트용 콜백 함수 따로 작성하여 호출하고, data 매개변수 적용 테스트</li>
-        <button id="btn2">클릭!</button>
-        <li>이벤트 전달 막기 테스트</li>
-        <h1>
-            <a href="">구글로 이동</a>
-        </h1>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-    <button onclick="location.href='../index.html'">뒤로가기</button>
+        $(function() {
+            $('#btn2').on('click', {
+                name: "개미"
+            }, greet);
+        });
+
+        //$('#btn2').bind('click',{name: "정훈"}, greet);
+        //.on( events [, selector ] [, data ], handler );
+
+        $(function() {
+            $('#h').on('click', function() {
+                alert('아이디 h에 클릭 이벤트 발생!!');
+            });
+            $('#h > a').on('click', function(event) {
+                alert('아이디 h안에 있는 a에 클릭 이벤트 발생!!');
+                //event.preventDefault(); // 지금 클릭한 이벤트 취소시킨다!
+                // event.stopPropagation(); // h안의 a만 클릭 못하게 함!!
+                return false; // 두 개를 합친 이벤트가 발생
+                // 이게 빠지면 h안에 있는 a 뿐만 아니라, h도 발생함
+                // 각각의 이벤트는 달라야 하나까 그럼 안되겠죠?
+            });
+            /*            $("h1 a").click(function(event) {
+                            $(this).css("background", "blue");
+                            alert("이동 막기");
+                            event.preventDefault();
+                            event.stopPropagation();
+                        });
+                        $("h1 a").bind("click", function() {
+                            alert("연쇄 작동");
+                        });*/
+        });
+
+    </script>
 </body>
 
 </html>

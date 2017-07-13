@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>04-1</title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function(){
+            $('select').change(function(){
+               var sel = $(this).val() + "번";
+                $('#selNum').html(sel);
+            });
+        });
+    </script>
+</head>
+<body>
+    <select name="number">
+        <option value="">== 선택 ==</option>
+        <option value="1">1번</option>
+        <option value="2">2번</option>
+        <option value="3">3번</option>
+        <option value="4">4번</option>
+    </select>
+    <span id="selNum"></span>
+</body>
+</html>

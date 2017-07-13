@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery 애니메이션 효과 부여하기</title>
+    <style>
+        div#box1 {
+            width: 50px;
+            height: 50px;
+            background-color: orange;
+        }
+        
+        .move{
+            background: #6f9;
+            width: 50px;
+            height: 50px;
+            left: 10px;
+            position: relative;
+            margin-bottom: 15px;
+        }
+    </style>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js">    </script>
+    <script>
+        $(function() {
+            $('h2').next().hide();
+            $('h2').on('click', function() {
+                $(this).next().toggle(1000);
+            });
+
+            $('button[value=open]').click(function() {
+                $('h2').next().gt(0).show();
+            });
+            $('button[value=close]').click(function() {
+                $('h2').next().eq(0).hide();
+            });
+
+            $('div#box1').hover(function() {
+                var h = $(this).css('height');
+                var w = $(this).css('width');
+                $(this).animate({
+                    width: parseInt(w) + 50,
+                    height: parseInt(h) + 50
+                }, 'slow');
+            }, function() {
+                var h = $(this).css('height');
+                var w = $(this).css('width');
+                $(this).animate({
+                    width: parseInt(w) - 50,
+                    height: parseInt(h) - 50
+                }, 'slow');
+            });
+
+            $('div.move').each(function(index) {
+                    $(this).delay(index * 500).animate({
+                        left: 500}, 'slow');
+                });
+        });
+
+    </script>
+</head>
+
+<body>
+    <h1>jQuery 애니메이션 효과 부여하기</h1>
+    <button value="open">Open</button>&nbsp;&nbsp;<button value="close">Close</button>
+    <h2>OPEN & CLOSE</h2>
+    <div>
+        <h3>Header</h3>
+        <p>Contents</p>
+    </div>
+    <h2>OPEN & CLOSE</h2>
+    <div>
+        <h3>Header</h3>
+        <p>Contents</p>
+    </div>
+    <br><br>
+    <div id="box1">
+    </div>
+    <br><br>
+    <div class="move"></div><div class="move"></div>
+    <div class="move"></div><div class="move"></div>
+    <div class="move"></div><div class="move"></div>
+    <br><br>
+    <button onclick="location.href='../index.html';">뒤로가기</button>
+</body>
+
+</html>
